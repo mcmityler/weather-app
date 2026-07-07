@@ -1,4 +1,50 @@
 /* styles.css */
+:root {
+  --dark-color: #625772;
+  --light-color: #fefaec;
+  --blue: #a9eee6;
+  --red: #f38181;
+}
+@font-face {
+  font-family: "Allura";
+  src:
+    url("./fonts/Manrope-VariableFont_wght.woff2") format("woff2"),
+    url("./fonts/Manrope-VariableFont_wght.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "BebasNeue";
+  src:
+    url("./fonts/BebasNeue-Regular.woff2") format("woff2"),
+    url("./fonts/BebasNeue-Regular.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: 1px solid red;
+  font-family: "BebasNeue", Arial, Helvetica, sans-serif;
+}
 body {
-  background-color: rebeccapurple;
+  background-color: var(--light-color);
+  color: var(--dark-color);
+}
+.container {
+  display: grid;
+  place-items: center;
+  grid-template-rows: repeat(6, 1fr);
+  gap: 20px;
+  font-size: 1.5rem;
+}
+.error {
+  font-size: 1.2rem;
+  grid-row: 1/2;
+  color: var(--red);
+}
+.temperature-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

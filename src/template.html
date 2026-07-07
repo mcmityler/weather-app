@@ -5,5 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
   </head>
-  <body></body>
+  <body>
+    <main>
+      <form id="search-form">
+        <label for="city-input">Enter a city:</label>
+        <input
+          type="text"
+          id="city-input"
+          name="city-input"
+          required
+          autocomplete="off"
+        />
+        <button>Search</button>
+        <input type="radio" name="temp-unit" id="celsius" value="C" checked />
+        <label for="celsius">Celsius</label>
+        <input type="radio" name="temp-unit" id="fahrenheit" value="F" />
+        <label for="fahrenheit">Fahrenheit</label>
+      </form>
+      <button class="update-button">Update</button>
+
+      <div class="container">
+        <p class="error">Error</p>
+        <p class="city-name">Place Name</p>
+        <p class="weather">Weather Condition</p>
+        <div class="temperature-container">
+          <p class="temperature">150</p>
+          <p class="unit-text">°C</p>
+        </div>
+        <p class="last-updated">Last Updated:</p>
+        <p id="api-time"></p>
+      </div>
+    </main>
+  </body>
 </html>
