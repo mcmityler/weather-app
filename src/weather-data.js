@@ -1,11 +1,7 @@
-import { UpdateFetchTime } from "./weather-display.js";
-
 let place = "";
 
 export default async function getWeather(m_place = place, m_tempUnit) {
   try {
-    // errorPlace = m_place;
-
     const response = await fetch(
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${m_place}?unitGroup=${m_tempUnit}&key=XZ7QS88NDFT6EPKPV35ZNL5ZW&contentType=json`,
     );
