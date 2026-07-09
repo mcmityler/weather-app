@@ -94,9 +94,15 @@ function UpdateWeather(response) {
   console.log(response);
   cityText.textContent = response.resolvedAddress;
   console.log(response.days[0].temp);
-  temperatureText.textContent = response.days[0].temp;
 
-  weatherText.textContent = response.days[0].conditions;
+  const currentHour = new Date().toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    hour12: false,
+  });
+
+  temperatureText.textContent = response.days[0].hours[currentHour - 1].temp;
+
+  weatherText.textContent = response.days[0].hours[currentHour - 1].conditions;
 
   lastUpdated.textContent =
     "last updated: " +
@@ -107,7 +113,7 @@ function UpdateWeather(response) {
       hour12: true,
     });
 
-  loadWeatherIcon(response.days[0].icon);
+  loadWeatherIcon(response.days[0].hours[currentHour - 1].icon);
 }
 
 function UpdateTemperatureUnit(unit) {
