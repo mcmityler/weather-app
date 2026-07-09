@@ -14,12 +14,13 @@ const celsiusRadio = document.getElementById("celsius");
 const timeTakenText = document.getElementById("api-time");
 
 let place = "";
-let tempUnit = "";
 let errorPlace = "";
 
 async function getWeather(m_place, m_tempUnit) {
   try {
     errorPlace = m_place;
+    timeTakenText.textContent = `Fetching Weather Data...`;
+
     // 1. Capture start time
     const startTime = performance.now();
     const response = await fetch(
@@ -35,7 +36,6 @@ async function getWeather(m_place, m_tempUnit) {
     console.log(response);
     if (response.ok === true) {
       place = m_place;
-      tempUnit = m_tempUnit;
       const weatherData = await response.json();
       console.log("fetched data");
       console.log(weatherData);
@@ -44,6 +44,12 @@ async function getWeather(m_place, m_tempUnit) {
   } catch (error) {
     console.error("Error fetching the Weather:", error);
   }
+}
+async function loadWeatherIcon(m_iconName) {
+  const weatherIcon = await import(`./weather-icons/${m_iconName}.svg`);
+  const weatherImageIcon = document.querySelector(".weather-icon");
+  console.log(weatherIcon.default);
+  weatherImageIcon.src = weatherIcon.default;
 }
 
 form.addEventListener("submit", (event) => {
@@ -100,6 +106,8 @@ function UpdateWeather(response) {
       second: "2-digit", // Optional
       hour12: true,
     });
+
+  loadWeatherIcon(response.days[0].icon);
 }
 
 function UpdateTemperatureUnit(unit) {

@@ -35,7 +35,7 @@ body {
 .container {
   display: grid;
   place-items: center;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: repeat(7, 1fr);
   gap: 20px;
   font-size: 1.5rem;
 }
@@ -47,4 +47,7 @@ body {
 .temperature-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
+}
+.weather-icon {
+  width: 50px;
 }
