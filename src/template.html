@@ -59,22 +59,27 @@
           </div>
         </div>
       </header>
-
-      <div class="container">
-        <p class="city-name">Place Name</p>
-        <img
-          src="./weather-icons/clear-day.svg"
-          alt="Weather Icon"
-          class="weather-icon"
-        />
-        <p class="weather">Weather Condition</p>
-        <div class="temperature-container">
-          <p class="temperature">150</p>
-          <p class="unit-text">°C</p>
+      <main>
+        <div class="container">
+          <div class="weather-container">
+            <p class="city-name">Place Name</p>
+            <img
+              src="./weather-icons/clear-day.svg"
+              alt="Weather Icon"
+              class="weather-icon"
+            />
+            <div class="temperature-container">
+              <p class="temperature">150</p>
+              <p class="unit-text">°C</p>
+            </div>
+            <p class="weather">Weather Condition</p>
+          </div>
+          <div class="detail-container">
+            <p class="last-updated">Last Updated:</p>
+            <p id="api-time"></p>
+          </div>
         </div>
-        <p class="last-updated">Last Updated:</p>
-        <p id="api-time"></p>
-      </div>
+      </main>
     </main>
   </body>
 </html>
