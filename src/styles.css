@@ -126,7 +126,7 @@ button:active {
   gap: 5px;
 }
 .weather-container {
-  margin-top: 70px;
+  margin-top: 80px;
   padding: 30px;
 }
 .temperature-container {
@@ -135,7 +135,7 @@ button:active {
   font-size: 4rem;
 }
 .weather-icon {
-  width: 50px;
+  width: 70px;
   place-self: center;
 }
 .city-name {
