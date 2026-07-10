@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather App</title>
+    <meta
+      name="description"
+      content="Weather application; find temperature or weather"
+    />
+    <meta property="og:type" content="website" />
+    <link
+      rel="icon"
+      type="image/png"
+      href="./weather-icons/partly-cloudy-day.svg"
+    />
+  </head>
+  <body>
+    <main>
+      <header>
+        <div class="logo-container">
+          <img
+            src="./weather-icons/partly-cloudy-day.svg"
+            alt="logo icon"
+            class="logo-icon"
+          />
+          <h1 class="logo-title">Weather App</h1>
+        </div>
+        <div class="search-container">
+          <p class="error">Error</p>
+          <form id="search-form">
+            <div class="city-input-container">
+              <input
+                type="text"
+                id="city-input"
+                name="city-input"
+                required
+                autocomplete="off"
+                placeholder=""
+              />
+              <label for="city-input">Enter a place:</label>
+            </div>
+            <div class="temp-unit-container">
+              <input
+                type="radio"
+                name="temp-unit"
+                id="celsius"
+                value="C"
+                checked
+              />
+              <label for="celsius">Celsius</label>
+              <input type="radio" name="temp-unit" id="fahrenheit" value="F" />
+              <label for="fahrenheit">Fahrenheit</label>
+            </div>
+          </form>
+          <div class="button-container">
+            <button class="search-button" form="search-form">Search</button>
+            <button class="update-button">Update</button>
+          </div>
+        </div>
+      </header>
+      <main>
+        <div class="container">
+          <div class="weather-container">
+            <p class="city-name">Place Name</p>
+            <img
+              src="./weather-icons/clear-day.svg"
+              alt="Weather Icon"
+              class="weather-icon"
+            />
+            <div class="temperature-container">
+              <p class="temperature">150</p>
+              <p class="unit-text">°C</p>
+            </div>
+            <p class="weather">Weather Condition</p>
+          </div>
+          <div class="detail-container">
+            <p class="last-updated">Last Updated:</p>
+            <p id="api-time"></p>
+          </div>
+        </div>
+      </main>
+    </main>
+  </body>
+</html>
